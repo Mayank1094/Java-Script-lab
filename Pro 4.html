@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>box color change</title>
+</head>
+<body>
+<h3>Change textbox color</h3>
+<input type="text"
+onfocus="changeColor(this)"
+onblur="resetColor(this)">
+
+<script>
+function changeColor(x)
+{
+    x.style.color = "red";
+    x.style.backgroundColor = "yellow";
+}
+
+function resetColor(x)
+{
+    x.style.color = "black";
+    x.style.backgroundColor = "white";
+}
+</script>
+</body>
+</html>
