@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration Form</title>
+</head>
+<body>
+
+<fieldset>
+<legend>Student Details</legend>
+
+<h2>Student Registration Form</h2>
+
+<form onsubmit="return validate()">
+
+Name: <input type="text" id="name"><br><br>
+
+Email: <input type="email" id="email"><br><br>
+
+Mobile: <input type="text" id="mobile"><br><br>
+
+Course:
+<select id="course">
+<option value="">Select Course</option>
+<option>BCA</option>
+<option>BSc</option>
+<option>BCom</option>
+</select><br><br>
+
+<input type="submit" value="Register">
+
+</form>
+</fieldset>
+
+<script>
+function validate()
+{
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var mobile = document.getElementById("mobile").value;
+    var course = document.getElementById("course").value;
+
+    if(name == "")
+    {
+        alert("Enter your Name");
+        return false;
+    }
+
+    if(email == "")
+    {
+        alert("Enter your Email");
+        return false;
+    }
+
+    if(mobile == "")
+    {
+        alert("Enter your Mobile Number");
+        return false;
+    }
+
+    if(!/^[0-9]{10}$/.test(mobile))
+    {
+        alert("Enter 10 digit mobile number");
+        return false;
+    }
+
+    if(course == "")
+    {
+        alert("Select a Course");
+        return false;
+    }
+
+    alert("Registration Successful!");
+    return true;
+}
+</script>
+
+</body>
+</html>
