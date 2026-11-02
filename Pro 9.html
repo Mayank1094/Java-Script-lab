@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Factorial</title>
+</head>
+<body>
+
+<h2>Factorial Program</h2>
+
+Enter a Number:
+<input id="n">
+
+<button onclick="fac()">Add Calculation</button>
+
+<p id="result">Result</p>
+
+<script>
+function fac()
+{
+    var n = Number(document.getElementById("n").value);
+    var f = 1;
+
+    if(n < 0 || !Number.isInteger(n) || document.getElementById("n").value == "")
+    {
+        document.getElementById("result").innerHTML = "Invalid Input";
+        return;
+    }
+
+    for(var i = 1; i <= n; i++)
+    {
+        f = f * i;
+    }
+
+    document.getElementById("result").innerHTML = "Factorial = " + f;
+}
+</script>
+
+</body>
+</html>
