@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+
+<style>
+body
+{
+    background-color: lightblue;
+}
+</style>
+
+</head>
+<body>
+
+<h2>Calculator</h2>
+
+<input id="a" placeholder="First Number"><br><br>
+
+<input id="b" placeholder="Second Number"><br><br>
+
+<button onclick="calc('+')">+</button>
+<button onclick="calc('-')">-</button>
+<button onclick="calc('*')">*</button>
+<button onclick="calc('/')">/</button>
+
+<br><br>
+
+<h3 id="result">Result</h3>
+
+<script>
+function calc(op)
+{
+    var a = Number(document.getElementById("a").value);
+    var b = Number(document.getElementById("b").value);
+    var r;
+
+    if(op == '+')
+        r = a + b;
+    else if(op == '-')
+        r = a - b;
+    else if(op == '*')
+        r = a * b;
+    else if(op == '/')
+        r = a / b;
+
+    document.getElementById("result").innerHTML = "Result: " + r;
+}
+</script>
+
+</body>
+</html>
