@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Check IP</title>
+</head>
+<body>
+
+<script>
+function checkIP(ip)
+{
+    var parts = ip.split(".");
+
+    if(parts.length != 4)
+    {
+        return false;
+    }
+
+    for(var i = 0; i < 4; i++)
+    {
+        if(!/^\d+$/.test(parts[i]) || parts[i] < 0 || parts[i] > 255)
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+var ip = prompt("Enter an IP Address");
+
+if(checkIP(ip))
+{
+    document.write("Valid IP Address");
+}
+else
+{
+    document.write("Invalid IP Address");
+}
+</script>
+
+</body>
+</html>
